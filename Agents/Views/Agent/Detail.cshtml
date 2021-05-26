@@ -1,0 +1,29 @@
+﻿@{ ViewData["Title"] = "Agent Detail"; }
+@model Agents.Models.Agent
+
+<div class="text-center">
+    <h1 class="display-4 mb-5">The Agent You're Looking For..</h1>
+
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Agent Code</th>
+                <th scope="col">Agent Name</th>
+                <th scope="col">Working Area</th>
+                <th scope="col">Commission</th>
+                <th scope="col">Phone Number</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Model.AgentCode</th>
+                <th>@Model.AgentName</th>
+                <th>@Model.WorkingArea</th>
+                <th>@Model.Commission</th>
+                <th>@Model.PhoneNo</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

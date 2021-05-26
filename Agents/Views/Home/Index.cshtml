@@ -20,7 +20,7 @@
             @foreach (var agent in Model.Agents)
             {
             <tr>
-                <th scope="row">@agent.AgentCode</th>
+                <th scope="row"><a href="Agent/detail/@agent.AgentCode">@agent.AgentCode</a></th>
                 <th>@agent.AgentName</th>
                 <th>@agent.WorkingArea</th>
                 <th>@agent.Commission</th>

@@ -20,10 +20,18 @@ namespace Agents.Models
         {
             var agents = new List<Agent>();
 
+            //string commandText = "UPDATE Sales.Store SET Demographics = @demographics WHERE CustomerID = @ID;";
+
             var connString = _configuration.GetConnectionString("default");
-            using (var conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
+
+
+                //SqlCommand command = new SqlCommand(commandText, connection);
+                //command.Parameters.Add("@ID", SqlDbType.Int);
+                //command.Parameters["@ID"].Value = customerID;
+                //command.Parameters.AddWithValue("@demographics", demoXml);
 
                 var cmd = new SqlCommand();
                 cmd.Connection = conn;
