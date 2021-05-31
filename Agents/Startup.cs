@@ -53,7 +53,11 @@ namespace Agents
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "singleAgent",
+                    name: "Create Agent",
+                    pattern: "Agent/create");
+
+                endpoints.MapControllerRoute(
+                    name: "Single Agent Data",
                     pattern: "Agent/detail/{id}");
 
                 endpoints.MapControllerRoute(

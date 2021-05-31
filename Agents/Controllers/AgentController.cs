@@ -28,5 +28,20 @@ namespace Agents.Controllers
 
             return View(agent);
         }
+
+        public IActionResult NewAgent()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Agent agent)
+        {
+            _singleAgent.CreateNewAgent(agent);
+            return RedirectToAction("Index", "Home");
+        }
+
+
     }
 }

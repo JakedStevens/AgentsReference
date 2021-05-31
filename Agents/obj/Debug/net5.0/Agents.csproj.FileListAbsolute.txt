@@ -362,3 +362,4 @@ C:\code\accelerator\vs\Agents\Agents\obj\Debug\net5.0\ref\Agents.dll
 C:\code\accelerator\vs\Agents\Agents\obj\Debug\net5.0\Agents.pdb
 C:\code\accelerator\vs\Agents\Agents\obj\Debug\net5.0\Agents.genruntimeconfig.cache
 C:\code\accelerator\vs\Agents\Agents\obj\Debug\net5.0\Razor\Views\Agent\Detail.cshtml.g.cs
+C:\code\accelerator\vs\Agents\Agents\obj\Debug\net5.0\Razor\Views\Agent\NewAgent.cshtml.g.cs
