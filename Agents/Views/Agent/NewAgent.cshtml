@@ -1,19 +1,20 @@
-﻿
+﻿@{ ViewData["Title"] = "Create Agent"; }
+
 <div class="container">
-    <form method="post" action="create">
-        <h1 class="display-4 mb-3">Create A New Agent Record</h1>
-        <div class="input-group mb-3 w-50">
-            <input type="text" class="form-control" name="agentName" placeholder="Agent Name">
-        </div>
-        <div class="input-group mb-3 w-50">
-            <input type="text" class="form-control" name="workingArea" placeholder="Working Area">
-        </div>
-        <div class="input-group mb-3 w-50">
-            <input type="number" step="0.01" class="form-control" name="Commission" placeholder="Commission">
-        </div>
-        <div class="input-group mb-3 w-50">
-            <input type="text" class="form-control" name="phoneNo" placeholder="Phone Number">
-        </div>
-        <button class="btn btn-success w-25" type="submit">Save</button>
-    </form>
+	<form method="post" action="create">
+		<h1 class="display-4 mb-3">Create A New Agent Record</h1>
+		<div class="input-group mb-3 w-50">
+			<input type="text" class="form-control" name="agentName" placeholder="Agent Name">
+		</div>
+		<div class="input-group mb-3 w-50">
+			<input type="text" class="form-control" name="workingArea" placeholder="Working Area">
+		</div>
+		<div class="input-group mb-3 w-50">
+			<input type="number" step="0.01" class="form-control" name="Commission" placeholder="Commission">
+		</div>
+		<div class="input-group mb-3 w-50">
+			<input type="text" class="form-control" name="phoneNo" placeholder="Phone Number">
+		</div>
+		<button class="btn btn-success w-25" type="submit">Save</button>
+	</form>
 </div>

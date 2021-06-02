@@ -1,33 +1,33 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 @model Agents.ViewModels.Home.HomeViewModel
 
 <div class="text-center">
-    <h1 class="display-4 pb-5">Agents</h1>
+	<h1 class="display-4 pb-5">Agents</h1>
 
-    <table class="table table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Agent Code</th>
-                <th scope="col">Name</th>
-                <th scope="col">Working Area</th>
-                <th scope="col">Commission</th>
-                <th scope="col">Phone Number</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var agent in Model.Agents)
-            {
-            <tr>
-                <th scope="row"><a href="Agent/detail/@agent.AgentCode">@agent.AgentCode</a></th>
-                <th>@agent.AgentName</th>
-                <th>@agent.WorkingArea</th>
-                <th>@agent.Commission</th>
-                <th>@agent.PhoneNo</th>
-            </tr>
-            }
-        </tbody>
-    </table>
+	<table class="table table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Agent Code</th>
+				<th scope="col">Name</th>
+				<th scope="col">Working Area</th>
+				<th scope="col">Commission</th>
+				<th scope="col">Phone Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var agent in Model.Agents)
+			{
+				<tr>
+					<th scope="row"><a href="Agent/detail/@agent.AgentCode">@agent.AgentCode</a></th>
+					<th>@agent.AgentName</th>
+					<th>@agent.WorkingArea</th>
+					<th>@agent.Commission</th>
+					<th>@agent.PhoneNo</th>
+				</tr>
+			}
+		</tbody>
+	</table>
 
 </div>

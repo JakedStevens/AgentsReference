@@ -6,8 +6,8 @@ using Agents.Models;
 
 namespace Agents.ViewModels.Home
 {
-    public class HomeViewModel
-    {
-        public List<Agent> Agents { get; set; }
-    }
+	public class HomeViewModel
+	{
+		public List<Agent> Agents { get; set; }
+	}
 }

@@ -7,60 +7,53 @@ using Microsoft.Extensions.Configuration;
 
 namespace Agents.Models
 {
-    public class AgentsData
-    {
-        private readonly IConfiguration _configuration;
+	public class AgentsData
+	{
+		private readonly IConfiguration _configuration;
 
-        public AgentsData(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
+		public AgentsData(IConfiguration configuration)
+		{
+			_configuration = configuration;
+		}
 
-        public List<Agent> AllAgentData()
-        {
-            var agents = new List<Agent>();
-
-            //string commandText = "UPDATE Sales.Store SET Demographics = @demographics WHERE CustomerID = @ID;";
-
-            var connString = _configuration.GetConnectionString("default");
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
+		public List<Agent> AllAgentData()
+		{
+			var agents = new List<Agent>();
 
 
-                //SqlCommand command = new SqlCommand(commandText, connection);
-                //command.Parameters.Add("@ID", SqlDbType.Int);
-                //command.Parameters["@ID"].Value = customerID;
-                //command.Parameters.AddWithValue("@demographics", demoXml);
+			var connString = _configuration.GetConnectionString("default");
+			using (SqlConnection conn = new SqlConnection(connString))
+			{
+				conn.Open();
 
-                var cmd = new SqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "SELECT * FROM Agents";
+				var cmd = new SqlCommand();
+				cmd.Connection = conn;
+				cmd.CommandType = System.Data.CommandType.Text;
+				cmd.CommandText = "SELECT * FROM Agents WHERE isHidden = 0";
 
-                var reader = cmd.ExecuteReader();
+				var reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    var aCode = reader["AgentCode"].ToString();
-                    var aName = reader["AgentName"].ToString();
-                    var wArea = reader["WorkingArea"].ToString();
-                    var commission = Convert.ToInt32(reader["Commission"]);
-                    var phone = reader["PhoneNo"].ToString();
+				while (reader.Read())
+				{
+					var aCode = reader["AgentCode"].ToString();
+					var aName = reader["AgentName"].ToString();
+					var wArea = reader["WorkingArea"].ToString();
+					var commission = Convert.ToDecimal(reader["Commission"]);
+					var phone = reader["PhoneNo"].ToString();
 
-                    agents.Add(new Agent
-                    {
-                        AgentCode = aCode,
-                        AgentName = aName,
-                        WorkingArea = wArea,
-                        Commission = commission,
-                        PhoneNo = phone
-                    });
-                }
-            }
+					agents.Add(new Agent
+					{
+						AgentCode = aCode,
+						AgentName = aName,
+						WorkingArea = wArea,
+						Commission = commission,
+						PhoneNo = phone
+					});
+				}
+			}
 
-            return agents;
-        }
+			return agents;
+		}
 
-    }
+	}
 }

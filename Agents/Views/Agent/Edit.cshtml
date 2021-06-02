@@ -1,0 +1,22 @@
+﻿@{ ViewData["Title"] = "Edit Agent"; }
+@model Agents.Models.Agent
+
+<div class="container">
+	<form method="post" action="Update">
+		<h1 class="display-4 mb-3">Edit Agent</h1>
+		<input hidden value="@Model.AgentCode" name="agentCode" />
+		<div class="input-group mb-3 w-50">
+			<input type="text" class="form-control" name="agentName" value="@Model.AgentName">
+		</div>
+		<div class="input-group mb-3 w-50">
+			<input type="text" class="form-control" name="workingArea" value="@Model.WorkingArea">
+		</div>
+		<div class="input-group mb-3 w-50">
+			<input type="number" step="0.01" class="form-control" name="Commission" value="@Model.Commission">
+		</div>
+		<div class="input-group mb-3 w-50">
+			<input type="text" class="form-control" name="phoneNo" value="@Model.PhoneNo">
+		</div>
+		<button class="btn btn-success w-25" type="submit">Save Edits</button>
+	</form>
+</div>
